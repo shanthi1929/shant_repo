@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>{% block head_title %}Welcome to Jango Bank{% endblock %}</title>
+</head>
+<body>
+	<h1 align="center">{% block title %}Welcome to Jango Bank{% endblock %}</h1>
+	{% block content %}
+
+	
+	 <p align="center">
+	 <a href="user.html">New Users</a>
+	 <a href="exist.html">Existing User</a>
+	 </p>
+
+
+	{% endblock %}
+</body>
+</html>
