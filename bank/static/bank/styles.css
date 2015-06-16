@@ -1,0 +1,12 @@
+body {
+    background: white url("images/bankee.jpg");
+}
+
+
+
+
+
+
+{# {% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'bank/styles.css' %}" />
+ #}

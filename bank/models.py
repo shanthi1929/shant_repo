@@ -14,6 +14,7 @@ class Customer(models.Model):
 	phone=models.IntegerField()
 	ssn=models.IntegerField()
 	join_date=models.DateTimeField(auto_now_add=True)
+	pwd=models.CharField(null=True,max_length=20)
 
 	def __unicode__(self):
 		return '%s' % self.first_Name

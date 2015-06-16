@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <div style="border:1px solid #ccc;width:520px">
+    <div style="padding:5px 5px 20px 5px">
+        <div style="float:left;font-weight:bold;width:500px;background: #148fff;color: #fff;padding: 10px 5px">New User Registration</div>
+        <div style="clear:both"></div>
+    </div>
+
+    <center>
+    <form action="{% url 'bank:........' %}" method="post">
+        {% csrf_token %}
+        <table width="100%" border="0" cellpadding="4" cellspacing="1">
+        
+        #customer id
+         <tr>
+             <td align="right">Customer id: </td>
+
+             <td>
+                <input type="text" name="post_id" id="post_id" value=" " /><br />
+             </td>
+         </tr>
+
+
+         #first name
+          <tr>
+             <td align="right">First Name: </td>
+
+             <td>
+                <input type="text" name="post_fname" id="post_fname" value=" " /><br />
+             </td>
+         </tr>
+
+
+         #last name
+          <tr>
+             <td align="right">Last Name: </td>
+
+             <td>
+                <input type="text" name="post_lname" id="post_lname" value=" " /><br />
+             </td>
+
+         </tr>
+
+
+         #address
+         <tr>
+             <td align="right">Address: </td>
+             <td>
+                <textarea name="post_addr" id="addr"></textarea>
+             </td>
+         </tr>
+
+        #city
+         <tr>
+             <td align="right">City: </td>
+
+             <td>
+                <select name="city">
+                    <option value="che">Chennai</option>
+                    <option value="coim">Coimabatore</option>
+                    <option value="bang">Bangalore</option>
+                    <option value="mum">Mumbai</option>
+                    <option value="pun">Pune</option>
+                    <option value="kol">Kolkata</option>
+                    <option value="ahm">Ahmedabad</option>
+                </select><br />
+             </td>
+
+         </tr>
+         
+         #state
+         <tr>
+             <td align="right">State: </td>
+
+             <td>
+                <input type="text" name="post_lname" id="post_lname" value=" " /><br />
+             </td>
+
+         </tr>
+
+
+         <tr>
+             <td>
+                <input type="submit" value="Post" />
+             </td>
+         </tr>
+
+
+
+        </table>
+    </form>
+    </center>
+
+    </div>
+</body>
+</html>

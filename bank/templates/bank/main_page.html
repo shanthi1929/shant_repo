@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>{{head_title}}</title>
+    <style>
+a:link    {color:#1919FF; background-color:#CCFFCC; text-decoration:underline}
+a:visited {color:#6600FF; background-color:transparent; text-decoration:none}
+a:hover   {color:#ff0000; background-color:transparent; text-decoration:underline}
+a:active  {color:#1919FF; background-color:transparent; text-decoration:underline}
+a { font-size:150%; font-family:"Times New Roman", Georgia, Serif;}
+{% load staticfiles %}
+</style>
+
+</head>
+
+<body>
+        <h1 style="color:blue"><center>{{page_title}}</center></h1>
+        <marquee><h3 style="color:#9999FF">{{page_body}}</h3></marquee>
+        <br>       
+        
+		<center>
+		<img src="{% static "bank/images/bankee.jpg" %}" alt="My image" height=500px width=900px/>
+        <pre>  	
+        <b><a href="register.html" target="_self">New User</a>                <a href="" target="_self">Existing User</a></b>
+
+        </pre>
+        </center>
+
+</body>
+</html>
