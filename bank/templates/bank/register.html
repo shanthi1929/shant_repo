@@ -11,42 +11,42 @@
     </div>
 
     <center>
-    <form action="{% url 'bank:........' %}" method="post">
+    <form action="" method="post">
         {% csrf_token %}
         <table width="100%" border="0" cellpadding="4" cellspacing="1">
         
-        #customer id
+        
          <tr>
              <td align="right">Customer id: </td>
 
              <td>
-                <input type="text" name="post_id" id="post_id" value=" " /><br />
+                <input type="Number" name="post_id" id="post_id" value=" " /><br />
              </td>
          </tr>
 
 
-         #first name
+         
           <tr>
              <td align="right">First Name: </td>
 
              <td>
-                <input type="text" name="post_fname" id="post_fname" value=" " /><br />
+                <input type="Text" name="post_fname" id="post_fname" value=" " /><br />
              </td>
          </tr>
 
 
-         #last name
+        
           <tr>
              <td align="right">Last Name: </td>
 
              <td>
-                <input type="text" name="post_lname" id="post_lname" value=" " /><br />
+                <input type="Text" name="post_lname" id="post_lname" value=" " /><br />
              </td>
 
          </tr>
 
 
-         #address
+         
          <tr>
              <td align="right">Address: </td>
              <td>
@@ -54,7 +54,7 @@
              </td>
          </tr>
 
-        #city
+        
          <tr>
              <td align="right">City: </td>
 
@@ -72,15 +72,57 @@
 
          </tr>
          
-         #state
+        
          <tr>
              <td align="right">State: </td>
+             <td>
+                <select name="city">
+                    <option value="che">Tamil Nadu</option>
+                    <option value="coim">Karnataka</option>
+                    <option value="bang">Maharastra</option>
+                    <option value="mum">Gujarat</option>
+                    <option value="pun">West Bengal</option>
+                </select>
+            <br />
+             </td>
+         </tr>
+
+         
+         <tr>
+             <td align="right">Mobile Number: </td>
 
              <td>
-                <input type="text" name="post_lname" id="post_lname" value=" " /><br />
+                <input type="Number" name="post_mob" id="post_mob" value=" " /><br />
              </td>
-
          </tr>
+
+        
+         <tr>
+             <td align="right">SSN: </td>
+
+             <td>
+                <input type="Number" name="post_ssn" id="post_ssn" value=" " /><br />
+             </td>
+         </tr>
+
+        
+         <tr>
+             <td align="right">Joining Date: </td>
+
+             <td>
+                <input type="Date" name="post_dat" id="post_dat" value=" " /><br />
+             </td>
+         </tr>
+         
+         <tr>
+             <td align="right">Create Password: </td>
+
+             <td>
+                <input type="Password" name="post_pwd" id="post_pwd" value=" " /><br />
+             </td>
+         </tr>
+
+
 
 
          <tr>

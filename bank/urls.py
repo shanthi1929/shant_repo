@@ -11,5 +11,6 @@ urlpatterns = patterns('',
     # url(r'^detail/$', views.myviewclass.detail, name='detail'),  
     #url(r'^$', views.search),
     url(r'^$', views.main_page),  
-    url(r'^$', views.register_page),
+    url(r'^register/$', views.register_page),    
+    # url(r'^register/',include('bank.urls')),
 )

@@ -38,7 +38,8 @@ def main_page(request):
 	return HttpResponse(output)
 
 def register_page(request):
-	 return render(request, 'bank/register.html')
+	#template=get_template('bank/register.html')
+	return render(request, 'bank/register.html')
 
 	# if request.method=='GET':
 	# 	form=RegistrationForm(request.GET)
