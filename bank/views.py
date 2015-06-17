@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context
 from django.template.loader import get_template
+from django.shortcuts import get_object_or_404
 from bank.forms import *
 
 import datetime
@@ -40,6 +41,23 @@ def main_page(request):
 def register_page(request):
 	#template=get_template('bank/register.html')
 	return render(request, 'bank/register.html')
+def login_page(request):
+	#template=get_template('bank/register.html')
+	return render(request, 'bank/login.html')
+
+def account_page(request):	
+	return render(request, 'bank/account_det.html')
+
+def create_page(request):	
+	return render(request, 'bank/acc_create.html')
+
+def modify_page(request):	
+	return render(request, 'bank/acc_modify.html')
+
+def delete_page(request):	
+	return render(request, 'bank/acc_delete.html')
+
+
 
 	# if request.method=='GET':
 	# 	form=RegistrationForm(request.GET)

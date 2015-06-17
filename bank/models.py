@@ -45,7 +45,7 @@ class Account(models.Model):
     open_balance=models.IntegerField()
     cust_id=models.IntegerField()
     date_opened=models.DateTimeField(auto_now_add=True)
-    interest=models.IntegerField()
+    acc_type=models.CharField(null=True,max_length=20)
     customer=models.ForeignKey(Customer)
     transaction=models.ForeignKey(Transaction)
 

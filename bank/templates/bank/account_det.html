@@ -1,12 +1,12 @@
 <html>
 <head>
-    <title>{{head_title}}</title>
+    <title>Delete Account</title>
     <style>
 a:link    {color:#1919FF; background-color:#CCFFCC; text-decoration:underline}
 a:visited {color:#003300; background-color:transparent; text-decoration:none}
 a:hover   {color:#ff0000; background-color:transparent; text-decoration:underline}
 a:active  {color:#1919FF; background-color:transparent; text-decoration:underline}
-a { font-size:150%; font-family:"Times New Roman", Georgia, Serif;}
+a { font-size:100%; font-family:"Times New Roman", Georgia, Serif;}
 {% load staticfiles %}
 </style>
 
@@ -17,15 +17,14 @@ a { font-size:150%; font-family:"Times New Roman", Georgia, Serif;}
         <marquee><h3 style="color:#9999FF">{{page_body}}</h3></marquee>
         <br>       
         
-		<center>
-		<img src="{% static "bank/images/bankee.jpg" %}" alt="My image" height=500px width=900px/>
-        <pre>  	
-        <b>
-        	{# <a href="register" target="_self">New User (Register)</a>  #}
-        <a href="{% url 'bank:register' %}" target="_self">New User (Register)</a>         	   <a href="{% url 'bank:login' %}" target="_self">Existing User (LogIn)</a>
+        <center>
+        <pre>   
+<b><a href="{% url 'bank:create_page' %}" target="_self">Create Account</a>      <a href="{% url 'bank:modify_page' %}" target="_self">Modify User Details</a>       <a href="{% url 'bank:delete_page' %}" target="_self">Delete Account</a>
         </b>
 
         </pre>
+        <img src="{% static "bank/images/piggy.jpg" %}" alt="My image" height=300px width=500px/>
+        
         </center>
 
 </body>
