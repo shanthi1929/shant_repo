@@ -28,16 +28,6 @@ p.submit { text-align: center; }
         {% csrf_token %}
         <table width="100%" border="0" cellpadding="4" cellspacing="1">
         
-        
-         <tr>
-             <td align="right">Customer id: </td>
-
-             <td>
-                <input type="Number" name="post_identify" id="post_identify" value=" " style="width: 21.5em"/><br />
-             </td>
-         </tr>
-
-
          
           <tr>
              <td align="right">First Name: </td>
@@ -73,7 +63,7 @@ p.submit { text-align: center; }
 
              <td>
                 <select name="city">
-                    <option value="ss">Select State</option>
+                    <option value="ss">Select City</option>
                     <option value="che">Chennai</option>
                     <option value="coim">Coimabatore</option>
                     <option value="bang">Bangalore</option>
@@ -91,7 +81,7 @@ p.submit { text-align: center; }
              <td align="right">State: </td>
              <td>
                 <select name="state">
-                    <option value="sc">Select City</option>
+                    <option value="sc">Select State</option>
                     <option value="che">Tamil Nadu</option>
                     <option value="coim">Karnataka</option>
                     <option value="bang">Maharastra</option>
@@ -130,13 +120,13 @@ p.submit { text-align: center; }
          </tr>
 
         
-         {# <tr>
+         <tr>
              <td align="right">Joining Date: </td>
 
              <td>
                 <input type="Date" name="post_dat" id="post_dat" value=" "/><br />
              </td>
-         </tr> #}
+         </tr> 
 
           <tr>
              <td align="right">Create User Name: </td>

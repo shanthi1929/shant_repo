@@ -58,15 +58,16 @@ def register_check(request):
         city=request.POST['city'],
         state=request.POST['state'],
         cust_mail=request.POST['email'],
-        # phone=request.POST['post_mob'],
-        phone=9987,
-        # ssn=request.POST['post_ssn'],
-        ssn=3306, )
+        phone=request.POST['post_mob'],
+        #phone=9987,
+        ssn=request.POST['post_ssn'],
+        #ssn=3306, 
+        )
 
     inx.save()
 
     bank = get_object_or_404(Customer, pk=request.POST.get('cust_id'))
-    return render(request, 'bank/login.html', {'bank': bank})
+    return render(request, reverse('login'), {'bank': bank})
     
 
 def login_page(request):
