@@ -7,14 +7,14 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('bank', '0001_initial'),
+        ('bank', '0005_auto_20150622_0631'),
     ]
 
     operations = [
-        migrations.AddField(
+        migrations.AlterField(
             model_name='customer',
-            name='pwd',
-            field=models.CharField(null=True, max_length=20),
+            name='first_Name',
+            field=models.CharField(max_length=20, null=True),
             preserve_default=True,
         ),
     ]

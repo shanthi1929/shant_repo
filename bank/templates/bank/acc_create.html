@@ -37,13 +37,19 @@ p.submit { text-align: center; }
              </td>
          </tr>
 
-          <tr>
-             <td align="right">Account Number: </td>
+
+         <tr>
+             <td align="right">Account Type: </td>
 
              <td>
-                <input type="Number" name="post_anum" id="post_anum" value=" " style="width: 21.5em"/><br />
+                <input type="radio" name="type" value="public">Public<br>
+                <input type="radio" name="type" value="student">Student<br>
+                <input type="radio" name="type" value="senior">Senior Citizen<br>
+                <input type="radio" name="type" value="minor">Minor<br>
+                
              </td>
          </tr>
+
 
          <tr>
              <td align="right">Opening Balance: </td>
@@ -67,6 +73,8 @@ p.submit { text-align: center; }
                     <option value="at">Account Type</option>
                     <option value="sav">Savings</option>
                     <option value="cur">Current</option>
+                    <option value="fix">Fixed</option>
+                
                 
                    
                 </select><br />

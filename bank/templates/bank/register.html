@@ -24,7 +24,7 @@ p.submit { text-align: center; }
 
 
     <center>
-    <form action="{% url 'bank:login' %}" method="post">
+    <form action="{% url 'bank:register_check' %}" method="POST">
         {% csrf_token %}
         <table width="100%" border="0" cellpadding="4" cellspacing="1">
         
@@ -33,7 +33,7 @@ p.submit { text-align: center; }
              <td align="right">Customer id: </td>
 
              <td>
-                <input type="Number" name="post_id" id="post_id" value=" " style="width: 21.5em"/><br />
+                <input type="Number" name="post_identify" id="post_identify" value=" " style="width: 21.5em"/><br />
              </td>
          </tr>
 
@@ -63,7 +63,7 @@ p.submit { text-align: center; }
          <tr>
              <td align="right">Address: </td>
              <td>
-                <textarea name="post_addr" id="addr" rows=7 cols=34></textarea>
+                <textarea name="post_addr" id="post_addr" rows=7 cols=34></textarea>
              </td>
          </tr>
 
@@ -90,7 +90,7 @@ p.submit { text-align: center; }
          <tr>
              <td align="right">State: </td>
              <td>
-                <select name="city">
+                <select name="state">
                     <option value="sc">Select City</option>
                     <option value="che">Tamil Nadu</option>
                     <option value="coim">Karnataka</option>
@@ -102,12 +102,21 @@ p.submit { text-align: center; }
              </td>
          </tr>
 
+        <tr>
+             <td align="right">Email: </td>
+
+             <td>
+
+                <input type="email" name="email" style="width: 21.5em"/>
+            </td>
+        </tr>
+
          
          <tr>
              <td align="right">Mobile Number: </td>
 
              <td>
-                <input type="Number" name="post_mob" id="post_mob" value=" "/ style="width: 21.5em"><br />
+                <input type="Number" name="post_mob" id="post_mob" value=" " style="width: 21.5em"/><br />
              </td>
          </tr>
 
@@ -121,11 +130,19 @@ p.submit { text-align: center; }
          </tr>
 
         
-         <tr>
+         {# <tr>
              <td align="right">Joining Date: </td>
 
              <td>
                 <input type="Date" name="post_dat" id="post_dat" value=" "/><br />
+             </td>
+         </tr> #}
+
+          <tr>
+             <td align="right">Create User Name: </td>
+
+             <td>
+                <input type="Text" name="post_username" id="post_username" value=" " size=35 /><br />
              </td>
          </tr>
          
