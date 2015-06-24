@@ -33,7 +33,7 @@ p.submit { text-align: center; }
              <td align="right">First Name: </td>
 
              <td>
-                <input type="Text" name="post_fname" id="post_fname" value=" " size=35 /><br />
+                <input type="Text" name="post_fname" id="post_fname" value=" " size=35 required><br />
              </td>
          </tr>
 
@@ -43,7 +43,7 @@ p.submit { text-align: center; }
              <td align="right">Last Name: </td>
 
              <td>
-                <input type="Text" name="post_lname" id="post_lname" value=" " size=35 /><br />
+                <input type="Text" name="post_lname" id="post_lname" value=" " size=35 required><br />
              </td>
 
          </tr>
@@ -53,7 +53,7 @@ p.submit { text-align: center; }
          <tr>
              <td align="right">Address: </td>
              <td>
-                <textarea name="post_addr" id="post_addr" rows=7 cols=34></textarea>
+                <textarea name="post_addr" id="post_addr" rows=7 cols=34 required></textarea>
              </td>
          </tr>
 
@@ -62,15 +62,15 @@ p.submit { text-align: center; }
              <td align="right">City: </td>
 
              <td>
-                <select name="city">
-                    <option value="ss">Select City</option>
-                    <option value="che">Chennai</option>
-                    <option value="coim">Coimabatore</option>
-                    <option value="bang">Bangalore</option>
-                    <option value="mum">Mumbai</option>
-                    <option value="pun">Pune</option>
-                    <option value="kol">Kolkata</option>
-                    <option value="ahm">Ahmedabad</option>
+                <select name="city" required>
+                    <option value="sc">Select City</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="coimbatore">Coimabatore</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="pune">Pune</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="ahmedabad">Ahmedabad</option>
                 </select><br />
              </td>
 
@@ -80,13 +80,13 @@ p.submit { text-align: center; }
          <tr>
              <td align="right">State: </td>
              <td>
-                <select name="state">
-                    <option value="sc">Select State</option>
-                    <option value="che">Tamil Nadu</option>
-                    <option value="coim">Karnataka</option>
-                    <option value="bang">Maharastra</option>
-                    <option value="mum">Gujarat</option>
-                    <option value="pun">West Bengal</option>
+                <select name="state" required>
+                    <option value="ss">Select State</option>
+                    <option value="tamil nadu">Tamil Nadu</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="maharastra">Maharastra</option>
+                    <option value="gujarat">Gujarat</option>
+                    <option value="west bengal">West Bengal</option>
                 </select>
             <br />
              </td>
@@ -97,7 +97,7 @@ p.submit { text-align: center; }
 
              <td>
 
-                <input type="email" name="email" style="width: 21.5em"/>
+                <input type="email" name="email" style="width: 21.5em" required>
             </td>
         </tr>
 
@@ -106,7 +106,7 @@ p.submit { text-align: center; }
              <td align="right">Mobile Number: </td>
 
              <td>
-                <input type="Number" name="post_mob" id="post_mob" value=" " style="width: 21.5em"/><br />
+                <input type="Number" name="post_mob" id="post_mob" value=" " style="width: 21.5em" required/><br />
              </td>
          </tr>
 
@@ -115,24 +115,17 @@ p.submit { text-align: center; }
              <td align="right">SSN: </td>
 
              <td>
-                <input type="Number" name="post_ssn" id="post_ssn" value=" " style="width: 21.5em"/><br />
+                <input type="Number" name="post_ssn" id="post_ssn" value=" " style="width: 21.5em" required/><br />
              </td>
          </tr>
 
         
-         <tr>
-             <td align="right">Joining Date: </td>
-
-             <td>
-                <input type="Date" name="post_dat" id="post_dat" value=" "/><br />
-             </td>
-         </tr> 
 
           <tr>
              <td align="right">Create User Name: </td>
 
              <td>
-                <input type="Text" name="post_username" id="post_username" value=" " size=35 /><br />
+                <input type="Text" name="post_username" id="post_username" value=" " size=35 required/><br />
              </td>
          </tr>
          
@@ -140,7 +133,7 @@ p.submit { text-align: center; }
              <td align="right">Create Password: </td>
 
              <td>
-                <input type="Password" name="post_pwd" id="post_pwd" size=35/><br />
+                <input type="Password" name="post_pwd" id="post_pwd" size=35 required/><br />
              </td>
          </tr>
 
@@ -148,7 +141,7 @@ p.submit { text-align: center; }
              <td align="right">Retype Password: </td>
 
              <td>
-                <input type="Password" name="post_rpwd" id="post_rpwd" size=35/><br />
+                <input type="Password" name="post_rpwd" id="post_rpwd" size=35 required/><br />
              </td>
          </tr>
 

@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.views.decorators.csrf import csrf_protect
 
-from bank.models import Customer, Account, Transaction, Login_details
+from bank.models import Customer, Account, Transaction
 from bank.forms import *
 
 
@@ -51,7 +51,6 @@ def register_page(request):
 def register_check(request):
 
     inx = Customer(
-        # cust_id=request.POST['post_identify'],
         first_Name=request.POST['post_fname'], 
         last_name=request.POST['post_lname'],
         address=request.POST['post_addr'],
@@ -59,19 +58,20 @@ def register_check(request):
         state=request.POST['state'],
         cust_mail=request.POST['email'],
         phone=request.POST['post_mob'],
-        #phone=9987,
         ssn=request.POST['post_ssn'],
-        #ssn=3306, 
+        login_name=request.POST['post_username'],
+        login_pwd=request.POST['post_rpwd'],
         )
 
     inx.save()
-
-    bank = get_object_or_404(Customer, pk=request.POST.get('cust_id'))
-    return render(request, reverse('login'), {'bank': bank})
+    
+    #bank = get_object_or_404(Customer, pk=request.POST.get('cust_id'))
+    return render(request, 'bank/reg_succes.html')
     
 
 def login_page(request):
-    #template=get_template('bank/register.html')
+    
+    
     return render(request, 'bank/login.html')
 
 
