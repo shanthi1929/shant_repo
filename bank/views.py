@@ -60,7 +60,7 @@ def register_check(request):
         phone=request.POST['post_mob'],
         ssn=request.POST['post_ssn'],
         login_name=request.POST['post_username'],
-        login_pwd=request.POST['post_rpwd'],
+        login_pwd=request.POST['post_rpwd']
         )
 
     inx.save()
@@ -76,18 +76,17 @@ def login_check(request):
     l_user=request.POST['post_lid']
     l_pwd=request.POST['post_lpwd']
 
+    l_user = l_user.strip()
+
     print(l_user, l_pwd)
     
-    u = Customer.objects.filter(login_name=l_user, login_pwd=l_pwd)
-
-    if u:
-        #print("Login Successfull")
+    try:
+        Customer.objects.get(login_name=l_user, login_pwd=l_pwd)
         return render(request, 'bank/account_det.html')
-    else:
-        #print("Username and Password does not match...Try Again")
+        #print("Login Successfull")
+    except Customer.DoesNotExist:
         return render(request, 'bank/login.html')
-
-
+        #print("Username and Password does not match...Try Again")
 
 def account_page(request):  
     return render(request, 'bank/account_det.html')
@@ -96,6 +95,18 @@ def account_page(request):
 def create_page(request):   
     return render(request, 'bank/acc_create.html')
 
+def create_store(request):
+    cre = Account( 
+        open_balance=request.POST['obal'],
+        acc_type=request.POST['typ'],
+        acc_pwd=request.POST['create_rpwd'],
+        balance=request.POST['obal']  
+        )
+
+    cre.save()
+    
+    #bank = get_object_or_404(Customer, pk=request.POST.get('cust_id'))
+    return render(request, 'bank/acc_det.html')
 
 def modify_page(request):   
     return render(request, 'bank/acc_modify.html')

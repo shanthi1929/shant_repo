@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^register_check/$', views.register_check, name="register_check"),
     url(r'^login/$', views.login_page, name="login"),
     url(r'^login_check/$', views.login_check, name="login_check"),
+    url(r'^create_store/$', views.create_store, name="create_store"),
 
     #url(r'^register_success/$', views.register_success, name="regis_success"),  
     #url(r'^account/$', views.account_page),
