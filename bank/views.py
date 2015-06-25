@@ -5,13 +5,13 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, RequestContext
 from django.template.loader import get_template
+from django.core.exceptions import ObjectDoesNotExist
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.views.decorators.csrf import csrf_protect
 
 from bank.models import Customer, Account, Transaction
-from bank.forms import *
 
 
 #def index(request):
@@ -51,7 +51,7 @@ def register_page(request):
 def register_check(request):
 
     inx = Customer(
-        first_Name=request.POST['post_fname'], 
+        first_name=request.POST['post_fname'], 
         last_name=request.POST['post_lname'],
         address=request.POST['post_addr'],
         city=request.POST['city'],
@@ -70,9 +70,23 @@ def register_check(request):
     
 
 def login_page(request):
-    
-    
     return render(request, 'bank/login.html')
+
+def login_check(request):
+    l_user=request.POST['post_lid']
+    l_pwd=request.POST['post_lpwd']
+
+    print(l_user, l_pwd)
+    
+    u = Customer.objects.filter(login_name=l_user, login_pwd=l_pwd)
+
+    if u:
+        #print("Login Successfull")
+        return render(request, 'bank/account_det.html')
+    else:
+        #print("Username and Password does not match...Try Again")
+        return render(request, 'bank/login.html')
+
 
 
 def account_page(request):  
