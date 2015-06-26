@@ -27,6 +27,7 @@ p.submit { text-align: center; }
     <form action="{% url 'bank:create_store' %}"  method="post">
         {% csrf_token %}
         <table width="100%" border="0" cellpadding="4" cellspacing="1">
+
         
         <tr>
              <td align="right">Account type: </td>
@@ -50,14 +51,24 @@ p.submit { text-align: center; }
 
              <td>
                 <select name="obal">
-                    <option value="op">Opening Balance</option>
-                    <option value="five">500</option>
-                    <option value="thou">1000</option>
-                    <option value="ten">10000</option>
+                    <option value=0>Opening Balance</option>
+                    <option value=500>500</option>
+                    <option value=1000>1000</option>
+                    <option value=10000>10000</option>
                    
                 </select><br />
              </td>
          </tr>
+
+          <tr>
+             <td align="right">Account Opening Date: </td>
+
+             <td>
+
+                <input type="date" name="adate" style="width: 21.5em" required>
+            </td>
+        </tr>
+        
 
          
           <tr>

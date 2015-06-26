@@ -77,11 +77,13 @@ def login_check(request):
     l_pwd=request.POST['post_lpwd']
 
     l_user = l_user.strip()
+    l_pwd = l_pwd.strip()
 
     print(l_user, l_pwd)
     
     try:
-        Customer.objects.get(login_name=l_user, login_pwd=l_pwd)
+        u=Customer.objects.get(login_name=l_user, login_pwd=l_pwd)
+        print(u)
         return render(request, 'bank/account_det.html')
         #print("Login Successfull")
     except Customer.DoesNotExist:

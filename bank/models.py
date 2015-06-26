@@ -17,12 +17,12 @@ class Customer(models.Model):
     state = models.CharField(max_length=10, null=True)
     phone = models.BigIntegerField(default=0, null=True)
     ssn = models.IntegerField(default=0, null=True)
-    join_date = models.DateTimeField(default=datetime.now())
+    join_date = models.DateTimeField(default=datetime.now(),editable=False)
     login_name = models.CharField(max_length=20, unique=True)
     login_pwd = models.CharField(max_length=20)
 
-    def __unicode__(self):
-        return '%s' % self.login_name
+    # def __unicode__(self):
+    #     return '%s' % self.login_name
 
     def __str__(self):
         return "{0} - {1} - {2}".format(
@@ -36,13 +36,13 @@ class Account(models.Model):
     acc_num = models.AutoField(primary_key=True)
     balance = models.IntegerField(default=0)
     open_balance = models.IntegerField(default=0)
-    date_opened = models.DateTimeField(auto_now_add=True)
+    date_opened = models.DateTimeField(default=datetime.now(),editable=False)
     acc_type = models.CharField(null=True, max_length=20)
     acc_pwd = models.CharField(max_length=20)
     cust_for = models.ForeignKey(Customer)
 
-    def __unicode__(self):
-        return '%s' % self.acc_num
+    # def __unicode__(self):
+    #     return '%s' % self.acc_num
 
     def __str__(self):
         return "{0} - {1}".format(
@@ -56,8 +56,8 @@ class Transaction(models.Model):
     trans_date = models.DateTimeField(auto_now_add=True)
     acc_for = models.ForeignKey(Account)
 
-    def __unicode__(self):
-        return '%s' % self.amount
+    # def __unicode__(self):
+    #     return '%s' % self.amount
 
     def __str__(self):
         return "{0} - {1}".format(self.amount, self.trans_date)

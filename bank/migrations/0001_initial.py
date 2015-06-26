@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import datetime
 
 
 class Migration(migrations.Migration):
@@ -15,10 +14,10 @@ class Migration(migrations.Migration):
             name='Account',
             fields=[
                 ('acc_num', models.AutoField(primary_key=True, serialize=False)),
-                ('balance', models.IntegerField(default=0)),
-                ('open_balance', models.IntegerField(default=0)),
-                ('date_opened', models.DateTimeField(auto_now_add=True)),
-                ('acc_type', models.CharField(null=True, max_length=20)),
+                ('balance', models.IntegerField(null=True, default=0)),
+                ('open_balance', models.IntegerField(null=True, default=0)),
+                ('date_opened', models.DateTimeField()),
+                ('acc_type', models.CharField(max_length=20, null=True)),
                 ('acc_pwd', models.CharField(max_length=20)),
             ],
             options={
@@ -28,17 +27,17 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Customer',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
-                ('first_Name', models.CharField(null=True, max_length=20)),
-                ('last_name', models.CharField(null=True, max_length=20)),
-                ('address', models.TextField(null=True, max_length=40)),
-                ('cust_mail', models.EmailField(null=True, max_length=40)),
-                ('city', models.CharField(null=True, max_length=15)),
-                ('state', models.CharField(null=True, max_length=10)),
+                ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
+                ('first_name', models.CharField(max_length=20, null=True)),
+                ('last_name', models.CharField(max_length=20, null=True)),
+                ('address', models.TextField(max_length=40, null=True)),
+                ('cust_mail', models.EmailField(max_length=40, null=True)),
+                ('city', models.CharField(max_length=15, null=True)),
+                ('state', models.CharField(max_length=10, null=True)),
                 ('phone', models.BigIntegerField(null=True, default=0)),
                 ('ssn', models.IntegerField(null=True, default=0)),
-                ('join_date', models.DateTimeField(default=datetime.datetime(2015, 6, 25, 9, 55, 4, 547456))),
-                ('login_name', models.CharField(unique=True, max_length=20)),
+                ('join_date', models.DateTimeField()),
+                ('login_name', models.CharField(max_length=20, unique=True)),
                 ('login_pwd', models.CharField(max_length=20)),
             ],
             options={
@@ -48,9 +47,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Transaction',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
+                ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
                 ('amount', models.IntegerField()),
-                ('trans_date', models.DateTimeField(auto_now_add=True)),
+                ('trans_date', models.DateTimeField()),
                 ('acc_for', models.ForeignKey(to='bank.Account')),
             ],
             options={
