@@ -1,0 +1,23 @@
+<form id="gi-form"
+      action=""
+      method="post">
+    {% csrf_token %}
+    <div id="gi-h-w">
+        <h3 class="gi-mh">{{ form.acc_num }}</h3>
+        <span>{{ form.acc_num.errors }}</span>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <p>{{ form.acc_type }}</p>
+            <span>{{ form.acc_type.errors }}</span>
+        </div>
+        <div class="col-md-3">
+            <p class="nm">{{ form.acc_pwd }}</p>
+            <span>{{ form.acc_pwd.errors }}</span>
+            <p class="nm">{{ form.acc_pwd_one }}</p>
+            <span>{{ form.address_acc_pwd_one.errors }}</span>
+        </div>
+    </div>
+    <input id="gi-form-submit" class="btn btn-primary" type="submit" value="SAVE">
+    <p>{{ form.non_field_errors }}</p>
+</form>

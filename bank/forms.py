@@ -1,25 +1,46 @@
 from django import forms
+from .models import Account
 
-
-OPEN_BALANCE_CHOICES=(
-    (500,500),
-    (1000,1000),
-    (10000,10000),
+TITLE_CHOICES = (
+    ('SAVINGS', 'savings'),
+    ('CURRENT', 'current'),
+    ('FIXED', 'fixed'),
 )
 
-ACCOUNT_TYPE=(
-    ('savings','SAVINGS'),
-    ('current','CURRENT'),
-    ('fixed','FIXED'),
-)
+class AccountForm(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = (
+            'acc_num', 'acc_type', 'acc_pwd','acc_pwd_one',
+                )
+        widgets = {
+            'acc_num': forms.TextInput
+            (
+                attrs={
+                    'placeholder':'Enter Account Number',
+                    'class':'col-md-12 form-control'
+                }
+            ),
+            'acc_type': forms.TextInput
+            (
+                attrs={
+                    'placeholder':'Enter a Account Type',
+                    'class':'form-control'
+                }
+            ),
+            'acc_pwd': forms.PasswordInput
+            (
+               
+            ),
+             'acc_pwd_one': forms.PasswordInput
+            (
+                # attr={
+                #     'placeholder':'Repeat Password',
+                #     'class':'col-md-12 form-control'
+                # }
 
-class CreateAccount(forms.Form):
-    open_balance=forms.MultipleChoiceField(required=True,widget=forms.CheckboxSelectMultiple,choices=OPEN_BALANCE_CHOICES)
-    acc_type=forms.MultipleChoiceField(required=True,widget=forms.CheckboxSelectMultiple,choices=ACCOUNT_TYPE)
-    acc_pwd=
-    acc_rpwd=
-    balance=
-    open_date=
+            ),
 
- 
+        }
+
     

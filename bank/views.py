@@ -12,6 +12,7 @@ from django.contrib.auth import logout
 from django.views.decorators.csrf import csrf_protect
 
 from bank.models import Customer, Account, Transaction
+from .forms import AccountForm
 
 
 #def index(request):
@@ -98,17 +99,27 @@ def create_page(request):
     return render(request, 'bank/acc_create.html')
 
 def create_store(request):
-    cre = Account( 
-        open_balance=request.POST['obal'],
-        acc_type=request.POST['typ'],
-        acc_pwd=request.POST['create_rpwd'],
-        balance=request.POST['obal']  
-        )
-
-    cre.save()
     
-    #bank = get_object_or_404(Customer, pk=request.POST.get('cust_id'))
-    return render(request, 'bank/acc_det.html')
+    if request.POST:
+        form = AccountForm(request.POST)
+        if form.is_valid():
+            account = form.save(commit=False)
+            account.owner = request.user
+            account.save()
+            redirect_url = reverse(
+                'bank.views.account_page',
+                args=(account.uuid,)
+            )
+            return HttpResponseRedirect(redirect_url)
+    else:
+        form=AccountForm()
+    variables = {
+        'form':form,
+    }
+
+    template = 'bank/account_cru.html'
+    
+    return render(request, template, variables)
 
 def modify_page(request):   
     return render(request, 'bank/acc_modify.html')
