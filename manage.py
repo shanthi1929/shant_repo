@@ -2,12 +2,7 @@
 import os
 import sys
 
-# asdff 
-# asdad
-# asdasd
-# Test4
-# 
-# 
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoproject.settings")
 
