@@ -4,6 +4,7 @@ import sys
 
 # Test 1
 # Test 2
+# Test 3
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoproject.settings")
